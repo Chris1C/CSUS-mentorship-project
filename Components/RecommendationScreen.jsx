@@ -12,9 +12,12 @@ const RecommendationScreen = () => {
   
   return (
     <View style={styles.container}>
-    <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
-      <Text>Hello, World!</Text>
+      <View style={styles.cardContainer}>
+    <TinderCard  onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
+
+      <View style={styles.card}><Text>fdsaf?</Text></View>
     </TinderCard>
+    </View>
     </View>
  );
   
@@ -22,12 +25,30 @@ const RecommendationScreen = () => {
 
   const styles = StyleSheet.create({
     container : {
-        flex:1,
+        display: "flex",
         backgroundColor : "red",
         alignItems: "center",
-        justifyContent: "center"
-    }
+        justifyContent: "center",
+        height: "100%",
+    },
     
+    card : {
+      // position: 'absolute',
+      backgroundColor: '#fff',
+      width: '100%',
+      maxWidth: 260,
+      height: 300,
+      shadowColor: 'black',
+      shadowOpacity: 0.2,
+      shadowRadius: 20,
+      borderRadius: 20,
+      resizeMode: 'cover',
+    },
+    cardContainer: {
+      width: '90%',
+      maxWidth: 260,
+      height: 300,
+    },
 
   })
   export default RecommendationScreen
