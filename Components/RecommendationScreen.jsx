@@ -1,6 +1,31 @@
 import { Text, View, StyleSheet } from 'react-native';
 import TinderCard from 'react-tinder-card';
 
+const RecipeData = {
+  "calories": 150,
+  "category": "dessert",
+  "cookingTime": 50,
+  "directions": [
+  "Mix dry ingredients",
+  "Mix wet ingredients"
+  ],
+  "id": 8,
+  "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/04/strawberry-cake-8c9a6b6.jpg",
+  "ingredients": [
+  {
+  "name": "sugar",
+  "quantity": 3,
+  "unit": "tablespoon"
+  },
+  {
+  "name": "milk",
+  "quantity": 300,
+  "unit": "mL"
+  }
+  ],
+  "name": "cake"
+  }
+
 const RecommendationScreen = () => {
   const onSwipe = (direction) => {
     console.log('You swiped: ' + direction)
@@ -15,7 +40,7 @@ const RecommendationScreen = () => {
       <View style={styles.cardContainer}>
     <TinderCard  onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
 
-      <View style={styles.card}><Text>fdsaf?</Text></View>
+      <View style={styles.card}><Text>{RecipeData.name}</Text></View>
     </TinderCard>
     </View>
     </View>
