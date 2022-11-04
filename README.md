@@ -7,7 +7,7 @@ Daniel Luo : djgruau101
 
 Christina Chen : Chris1C
 
-Minna Feng : To Be Updated
+Minna Feng : minnafeng
 
 # Context:
 
