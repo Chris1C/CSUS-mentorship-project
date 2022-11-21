@@ -55,3 +55,30 @@ We will use Jira to keep track of our task progress and track any issues/bugs.
 In the future, after our initial app launches, we will like to test our app features on actual clients and get their feedback. We would then improve our product based on their feedback.
 
 We will also like our app to give users recipe recommendations, based on its calorie count and other additional features that clients would like to have.
+
+#Structure
+Our app will have the following 3 screens : 
+1. Home screen 
+2. Login screen
+3. Recommendations screen
+
+For screens #2 and #3, we specify some json object that will be fetched or posted :
+
+2. Login screen
+  We check whether the user credentials match the json object stored in the user database
+  {
+  "firstName": firstName,
+  "lastName": lastName,
+  "username": username,
+  "password": password
+  }
+
+3. Recommendation screen
+   The json object of a recipe will be stored as follows
+  
+   {
+    "recipeName" : red velvet cupcakes
+    "percentMatch" : 80
+    "category" : desserts
+    "image" : [img link]
+    }
