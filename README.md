@@ -56,7 +56,7 @@ In the future, after our initial app launches, we will like to test our app feat
 
 We will also like our app to give users recipe recommendations, based on its calorie count and other additional features that clients would like to have.
 
-#Structure
+# Structure
 Our app will have the following 3 screens : 
 1. Home screen 
 2. Login screen
