@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet,ImageBackground } from 'react-native';
 import TinderCard from 'react-tinder-card';
 
 const RecipeData = {
@@ -12,7 +12,8 @@ const RecipeData = {
   "id": 8,
   "image": "https://images.immediate.co.uk/production/volatile/sites/30/2020/04/strawberry-cake-8c9a6b6.jpg",
   "ingredients": [
-  {
+  { 
+    
   "name": "sugar",
   "quantity": 3,
   "unit": "tablespoon"
@@ -26,6 +27,7 @@ const RecipeData = {
   "name": "cake"
   }
 
+
 const RecommendationScreen = () => {
   const onSwipe = (direction) => {
     console.log('You swiped: ' + direction)
@@ -34,13 +36,25 @@ const RecommendationScreen = () => {
   const onCardLeftScreen = (myIdentifier) => {
     console.log(myIdentifier + ' left the screen')
   }
-  
+  //added <img alt="cake recipe" src={styles.card.image} /> 
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
     <TinderCard  onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>
+    
+      <View style={styles.card}>
+        
+          {/* fs */}
+          <ImageBackground style={styles.cardImage} source={RecipeData.image}>
+                <Text style={styles.cardTitle}>{RecipeData.name}</Text>
+          </ImageBackground>
 
-      <View style={styles.card}><Text>{RecipeData.name}</Text></View>
+          {/* fds */}
+
+
+        {/* put back  */}
+        {/* <Text>{RecipeData.name}</Text> */}
+        </View>
     </TinderCard>
     </View>
     </View>
@@ -55,6 +69,7 @@ const RecommendationScreen = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
+
     },
     
     card : {
@@ -68,12 +83,26 @@ const RecommendationScreen = () => {
       shadowRadius: 20,
       borderRadius: 20,
       resizeMode: 'cover',
+
     },
     cardContainer: {
       width: '90%',
       maxWidth: 260,
       height: 300,
+      // backgroundImage: `url("https://images.immediate.co.uk/production/volatile/sites/30/2020/04/strawberry-cake-8c9a6b6.jpg")`,
+
     },
 
+    // fdsa maybe remove
+    cardImage: {
+      width: '100%',
+      height: '100%',
+      overflow: 'hidden',
+      borderRadius: 20,
+    },
   })
+
+
+
+  
   export default RecommendationScreen
